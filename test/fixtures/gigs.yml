@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-01-10
+  time: 9.99
+  capacity: 1
+  artist_id: 1
+  venue_id: 1
+
+two:
+  date: 2016-01-10
+  time: 9.99
+  capacity: 1
+  artist_id: 1
+  venue_id: 1
