@@ -4,6 +4,8 @@ class GigsController < ApplicationController
 
   def index
     @gigs = Gig.all
+    @artists = Artist.all
+    @venues = Venue.all
   end
 
   def new
@@ -11,6 +13,8 @@ class GigsController < ApplicationController
   end
 
   def create
+    Gig.create(gig_params)
+    redirect_to gigs_path
   end
 
   def show
@@ -31,8 +35,13 @@ class GigsController < ApplicationController
 
   private
   def gig_params
-    params.require(:gig).permit(:date, :time, :capacity, :artist_id, :venue_id)
+    params.require(:gig).permit(:start_date, :end_date, :capacity, :artist_id, :venue_id)
+
+
   end
 
+  def load_gig
+    @gig = Gig.find(params[:id]) 
+  end
 
 end

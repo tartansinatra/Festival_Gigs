@@ -1,13 +1,2 @@
 <h2> Add an Artist </h2>
-
-<%= form_for @artist do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title, size: "75" %>
-    <br>
-    <%= f.label :description %>
-    <%= f.text_area :description, size: "75x6" %>
-    <br>
-    <%= f.label :image %>
-    <%= f.text_field :image, size: "75" %>
-    <%= f.submit 'Save this Artist!' %>
-  <% end %>
+<%= render 'form' %>

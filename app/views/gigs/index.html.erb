@@ -1,9 +1,18 @@
 <h1>Festival Gigs</h1>
 
-<% @gigs.each do |gig| %>
-  <% if gig.artist %>
-  <h3>Artist: <%= gig.artist.title %> </h3>
-  <h3>Venue: <%= gig.venue.name %> </h3>
-  <h3>Date: <%= gig.start_date %> </h3>
-  <% end %>
-<% end %>
+
+  <table>
+    <tr>
+      <th> Artist </th>
+      <th> Date </th>
+      <th> Venue </th>
+    </tr>
+    <tr> 
+    <% @gigs.each do |gig| %>
+      <p> <%= Artist.find(gig.artist_id).title %>
+      <%= nice_date(gig.start_date) %> 
+      <%= Venue.find(gig.venue_id).name %> </p>
+   <% end %>
+    </tr>
+  </table> 
+  

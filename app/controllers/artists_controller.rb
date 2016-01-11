@@ -13,7 +13,7 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    artist.create(artist_params)
+    Artist.create(artist_params)
     redirect_to artists_path
   end
 
@@ -34,8 +34,8 @@ class ArtistsController < ApplicationController
   end
 
   private
-  def article_params
-    params.require(:artist).permit(:title, :description, :image, :genre_id)
+  def artist_params
+    params.require(:artist).permit(:title, :description, :image)
   end
 
   def load_artist

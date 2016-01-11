@@ -1,8 +1,12 @@
-<%= form_for @gigs do |f| %>
-<p> Artist: <%= f.select :artist_id, Artist.all.map { |a| [a.artist, a.id] } %> </p>
+<h3> Add a Gig! </h3>
+
+
+<%= form_for Gig.new do |f| %>
+<p> Artist: <%= f.select :artist_id, Artist.all.map { |a| [a.title, a.id] } %> </p>
+<p> Venue: <%= f.select :venue_id, Venue.all.map { |a| [a.name, a.id] } %> </p>
 <p> Start Date & Time: <%= datetime_local_field(:gig, :start_date) %> </p>
 <p> End Date & Time: <%= datetime_local_field(:gig, :end_date) %> </p>
 <%= f.label :capacity %>
-<%= f.integer :capcity %>
-<%= f.submit 'Schedule this Gig!' %>
+<%= f.text_field :capacity %>
+<%= f.submit 'Add this Gig!' %>
 <% end %>

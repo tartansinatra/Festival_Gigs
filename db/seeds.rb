@@ -16,8 +16,8 @@ Venue.create!(name: 'Bannermans Bar', add_1: "202 Cowgate", town: 'Edinburgh', p
 
 puts "creating gigs"
 g1 = Gig.create!(start_date: "2016-02-01 17:00", end_date: "2016-02-01 18:59", capacity: 100, venue: v1, artist: a1)
-Gig.create!(start_date: "2016-02-01 19:00", end_date: "2016-02-01 20:59", capacity: 100)
-Gig.create!(start_date: "2016-02-01 21:00", end_date: "2016-02-01 22:59", capacity: 100)
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #

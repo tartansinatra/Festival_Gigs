@@ -1,0 +1,20 @@
+<%= form_for @venue do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, size: "75" %>
+  <br>
+  <%= f.label :street %>
+  <%= f.text_field :add_1, size: "75" %>
+  <br>
+  <%= f.label :area %>
+  <%= f.text_field :add_2, size: "75" %>
+  <br>
+  <%= f.label :town %>
+  <%= f.text_field :town, size: "75" %>
+  <br>
+  <%= f.label :postcode %>
+  <%= f.text_field :postcode, size: "30" %>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image, size: "75" %>
+  <%= f.submit %>
+<% end %>
