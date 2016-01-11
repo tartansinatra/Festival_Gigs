@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   
   # before_action :authenticate_user!, except: [:index]
   before_action :load_artist, except:[:index, :new, :create]
-  load_and_authorize_resource
+  
 
   def index
     @artists = Artist.all
@@ -38,7 +38,7 @@ class ArtistsController < ApplicationController
     params.require(:artist).permit(:title, :description, :image, :genre_id)
   end
 
-  def load_article
+  def load_artist
     @artist = Artist.find(params[:id]) 
   end
 end

@@ -1,1 +1,9 @@
-<h1>Stueepolooza</h1>
+<h1>Festival Gigs</h1>
+
+<% @gigs.each do |gig| %>
+  <% if gig.artist %>
+  <h3>Artist: <%= gig.artist.title %> </h3>
+  <h3>Venue: <%= gig.venue.name %> </h3>
+  <h3>Date: <%= gig.start_date %> </h3>
+  <% end %>
+<% end %>

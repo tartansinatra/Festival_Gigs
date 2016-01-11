@@ -8,6 +8,16 @@
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li> <%= link_to('Show Gigs', gigs_path) %> </li>
+      <li> <%= link_to('Show Artists', artists_path) %> </li>
+      <br>
+      <li> <%= link_to("New Gig", new_gig_path) %> </li>
+      <li> <%= link_to("New Artist", new_artist_path) %> </li>
+    </ul>
+  </nav>
+
 <%= yield %>
 
 </body>
