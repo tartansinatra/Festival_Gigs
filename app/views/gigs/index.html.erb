@@ -10,8 +10,8 @@
     <tr> 
     <% @gigs.each do |gig| %>
       <p> <%= Artist.find(gig.artist_id).title %>
-      <%= nice_date(gig.start_date) %> 
-      <%= Venue.find(gig.venue_id).name %> </p>
+          <%= nice_date(gig.start_date) %> 
+          <%= Venue.find(gig.venue_id).name %> </p>
    <% end %>
     </tr>
   </table> 

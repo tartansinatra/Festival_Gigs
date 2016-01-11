@@ -12,7 +12,7 @@ class VenuesController < ApplicationController
 
   def create
     Venue.create(venue_params)
-    redirect_to venue_path
+    redirect_to venues_path
   end
 
   def show
@@ -27,7 +27,7 @@ class VenuesController < ApplicationController
   end
 
   def destroy
-    venue.destroy
+    @venue.destroy
     redirect_to(venues_path)
   end
 

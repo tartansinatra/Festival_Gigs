@@ -1,9 +1,9 @@
 <h1> Gigs </h1>
 
 <h3> <%= @artist.title %></h3>
-<p> Date: <%= @gig.start_date %> </p>
-<p> Time: %>
-<p> Venue: <%= @gig.venue %>
+<p> Date: <%= nice_date(gig.start_date) %> </p>
+<p> Time: <%= nice_time(gig.start_date) %>
+<p> Venue: <%= @gig.venue.name %>
 <% end %>
 
 <br>
