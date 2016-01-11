@@ -1,9 +1,7 @@
-Venues
+<h1> Venues </h1>
 
 
-<p> <%= @venues.each do |venue| %>
-<%= link_to(venue.name, venue_path(venue)) %> 
-<%= link_to('Edit', edit_venue_path(venue)) %> 
-<%= link_to('Destroy', venue, method: :delete, data: { confirm: 'Are you sure?'}) %> </p>
-
+<p> <%= @venues.each do |venue| %> </p>
+<p> <%= link_to(venue.name, venue_path(venue)) %>
+ <%= link_to('Edit', edit_venue_path(venue)) %> </p>
 <% end %>

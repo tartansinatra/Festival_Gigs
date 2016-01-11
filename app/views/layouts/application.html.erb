@@ -14,9 +14,16 @@
 
   <nav>
     <ul>
-      <li> <%= link_to('User Registration', new_user_registration) %> </li>
+      <div class='login'>
+      <% if current_user %>
+        <%= current_user.email %>
+        <%= link_to "log out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %>
+        <%= link_to "Register", new_user_registration_path %>
+      <% end %>
+
       
-      <br>
       <li> <%= link_to('Show Gigs', gigs_path) %> </li>
       <li> <%= link_to('Show Artists', artists_path) %> </li>
       <li> <%= link_to("Show Venues", venues_path) %> </li>
