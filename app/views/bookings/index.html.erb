@@ -1,0 +1,17 @@
+My Booked Tickets
+
+
+
+<%= form_for Booking.new do |f| %>
+
+<% @gigs.each do |gig| %>
+  <p> <%= Artist.find(gig.artist_id).title %>,
+      <%= Venue.find(gig.venue_id).name %>, 
+      <%= nice_date(gig.start_date) %> 
+      @<%= nice_time(gig.start_date) %> </p>
+
+
+<%= f.label :capacity %>
+<%= f.text_field :capacity %>
+<%= f.submit 'Add this Gig!' %>
+<% end %>

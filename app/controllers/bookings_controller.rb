@@ -9,11 +9,12 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @gig = Gig.find(params[:gig_id])
     @booking = Booking.new
   end
 
   def create
-    Booking.create(booking_params)
+    current_user.bookings.create(booking_params)
     redirect_to bookings_path
   end
 
@@ -29,13 +30,13 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @artist.destroy
-    redirect_to(artists_path)
+    @booking.destroy
+    redirect_to(bookings_path)
   end
 
   private
   def booking_params
-    params.require(:booking).permit(:user_id, :gig_id)
+    params.require(:booking).permit(:user_id, :gig_id, :no_of_tickets)
   end
 
   def load_venue

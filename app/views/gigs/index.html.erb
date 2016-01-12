@@ -11,8 +11,11 @@
     <% @gigs.each do |gig| %>
       <p> <%= Artist.find(gig.artist_id).title %>,
           <%= Venue.find(gig.venue_id).name %>, 
-          <%= nice_date(gig.start_date) %> </p>
-
-   <% end %>
+          <%= nice_date(gig.start_date) %> 
+          @<%= nice_time(gig.start_date) %>
+          <%= link_to("Show", gig_path(gig)) %>
+          <%= link_to("Book!", new_booking_path) %> </p>
+    <% end %>
+     
     </tr>
   </table> 

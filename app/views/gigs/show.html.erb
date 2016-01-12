@@ -1,12 +1,10 @@
 <h1> Gigs </h1>
 
-<p> <%= @artist.title %> </p>
+<p> <%= @gig.artist.title %> </p>
 <p> Venue: <%= @gig.venue.name %> </p>
-<p> Date: <%= nice_date(gig.start_date) %> </p>
-<p> Time: <%= nice_time(gig.start_date) %> </p>
+<p> Date: <%= nice_date(@gig.start_date) %> </p>
+<p> Time: <%= nice_time(@gig.start_date) %> </p>
 
 <%= link_to('Edit', edit_gig_path(@gig)) %>
 <%= link_to('Delete', gig_path(@gig), method: :delete, data: {confirm: 'Are you sure?'}) %>
-<% end %>
-
-<br>
+<%= link_to('Book', new_gig_booking_path(@gig)) %>
