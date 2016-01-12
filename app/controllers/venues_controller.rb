@@ -2,6 +2,7 @@ class VenuesController < ApplicationController
 
   before_action :authenticate_user!, except: [:index]
   before_action :load_venue, except:[:index, :new, :create]
+  load_and_authorize_resource
 
   def index
     @venues = Venue.all

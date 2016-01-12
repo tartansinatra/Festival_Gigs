@@ -1,7 +1,10 @@
 <h1> Venues </h1>
-
+Click a Venue to Show it's location...
 
 <p> <% @venues.each do |venue| %> </p>
-<p> <%= link_to(venue.name, venue_path(venue)) %>
- <%= link_to('Edit', edit_venue_path(venue)) %> </p>
+  <p> <%= link_to(venue.name, venue_path(venue)) %>
+  
+  <% if can? :manage, @venue %>
+   <%= link_to('Edit', edit_venue_path(venue)) %> </p>
+  <% end %>
 <% end %>
