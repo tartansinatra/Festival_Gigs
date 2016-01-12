@@ -2,17 +2,17 @@
 
 
   <table>
-    <tr>
+    <!-- <tr>
       <th> Artist </th>
       <th> Date </th>
       <th> Venue </th>
-    </tr>
+    </tr> -->
     <tr> 
     <% @gigs.each do |gig| %>
-      <p> <%= Artist.find(gig.artist_id).title %>
-          <%= nice_date(gig.start_date) %> 
-          <%= Venue.find(gig.venue_id).name %> </p>
+      <p> <%= Artist.find(gig.artist_id).title %>,
+          <%= Venue.find(gig.venue_id).name %>, 
+          <%= nice_date(gig.start_date) %> </p>
+
    <% end %>
     </tr>
   </table> 
-  

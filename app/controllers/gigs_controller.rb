@@ -1,5 +1,6 @@
 class GigsController < ApplicationController
   
+  before_action :authenticate_user!, except: [:index]
   before_action :load_gig, except:[:index, :new, :create]
 
   def index
@@ -36,8 +37,6 @@ class GigsController < ApplicationController
   private
   def gig_params
     params.require(:gig).permit(:start_date, :end_date, :capacity, :artist_id, :venue_id)
-
-
   end
 
   def load_gig

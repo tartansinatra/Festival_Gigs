@@ -1,5 +1,6 @@
 class VenuesController < ApplicationController
 
+  before_action :authenticate_user!, except: [:index]
   before_action :load_venue, except:[:index, :new, :create]
 
   def index
@@ -22,7 +23,7 @@ class VenuesController < ApplicationController
   end
 
   def update
-    @venue.update(user_params)
+    @venue.update(venue_params)
     redirect_to(venues_path)
   end
 
