@@ -23,7 +23,7 @@ class VenuesController < ApplicationController
 
   def update
     @venue.update(user_params)
-    redirect_to(venue_path)
+    redirect_to(venues_path)
   end
 
   def destroy

@@ -25,7 +25,7 @@ class ArtistsController < ApplicationController
 
   def update
     @artist.update(artist_params)
-    redirect_to(artist_path)
+    redirect_to(artists_path)
   end
 
   def destroy

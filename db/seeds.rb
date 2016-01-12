@@ -5,8 +5,16 @@ Venue.delete_all
 
 puts "creating artists"
 a1 = Artist.create!(title: 'Hells Bells', description: "The UK's #1 AC/DC Tribute Act")
-a2 = Artist.create!(title: 'Foo Fakers', description: "Wolverhampton's 2nd Best Foo Fighters Tribute Band")
-a3 = Artist.create!(title: 'Kaiser Thiefs', description: "Rockers from Newcastle")
+a2 = Artist.create!(title: 'Food Fighters', description: "Wolverhampton's 2nd Best Foo Fighters Tribute Band")
+a3 = Artist.create!(title: 'Kaiser Thiefs', description: "Not from Leeds, from Leith!")
+Artist.create!(title: 'Mentallica', description: "The Sandman Returns!")
+Artist.create!(title: 'Hi-On Maiden', description: "Playing with Madness!")
+Artist.create!(title: 'Fake No More', description: "Midlife Crises!")
+Artist.create!(title: 'Abbatoir', description: "Heavy Metal tribute to Sweden's biggest export!")
+Artist.create!(title: 'Dread Zepplin', description: "Not from Leeds, from Leith!")
+Artist.create!(title: 'AB/CD', description: "Let there be Rock... Again!")
+Artist.create!(title: 'Slack Babbeth', description: "Blacker and better!")
+
 
 
 puts "creating venues"

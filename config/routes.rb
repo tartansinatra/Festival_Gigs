@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :gigs, :artists, :venues , :bookings
   devise_for :users
+  resources :gigs, :artists, :venues , :bookings
+ 
   root to: 'gigs#index'
 
 
