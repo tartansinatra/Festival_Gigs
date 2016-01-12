@@ -5,5 +5,9 @@
 <p> <%= @venue.add_2 %> </p>
 <p> <%= @venue.town %> </p>
 <p> <%= @venue.postcode %> </p>
-
 <p> <img src='<%= @venue.image %>' alt='Picture of <%= @venue.name %>' > </p>
+
+<p> <% if can? :manage, @venue %>
+ <%= link_to('Edit', edit_venue_path(@venue)) %>
+ <%= link_to('Delete', venue_path(@venue), method: :delete, data: {confirm: 'Are you sure - THERE MAY GIGS & BOOKINGS LINKED TO THIS VENUE!?'}) %>
+<% end %>

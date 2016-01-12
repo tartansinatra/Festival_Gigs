@@ -4,3 +4,8 @@
 <p> Genre: TBC </p>
 <br>
 <p> <img src='<%= @artist.image %>' alt='Picture of <%= @artist.title %>' > </p>
+<p> <% if can? :manage, @artist %>
+ <%= link_to('Edit', edit_artist_path(@artist)) %>
+ <%= link_to('Delete', artist_path(@artist), method: :delete, data: {confirm: 'Are you sure?'}) %>
+<% end %>
+

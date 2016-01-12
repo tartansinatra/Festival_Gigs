@@ -32,9 +32,11 @@
       <br>
       <li> <%= link_to("Show Booked Tickets", bookings_path) %> </li>
       <br>
+      <% if can? :manage, @all %>
       <li> <%= link_to("New Gig", new_gig_path) %> </li>
       <li> <%= link_to("New Artist", new_artist_path) %> </li>
       <li> <%= link_to("New Venue", new_venue_path) %> </li>
+      <% end %>
     </ul>
   </nav>
 
