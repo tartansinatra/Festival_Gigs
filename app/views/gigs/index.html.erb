@@ -14,7 +14,7 @@
           <%= nice_date(gig.start_date) %> 
           @<%= nice_time(gig.start_date) %>
           <%= link_to("Show", gig_path(gig)) %>
-          <%= link_to("Book!", new_booking_path) %> </p>
+          <%= link_to("Book!", new_gig_booking_path(gig)) %> </p>
     <% end %>
      
     </tr>
