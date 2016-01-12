@@ -2,20 +2,29 @@
 
 
   <table>
-    <!-- <tr>
-      <th> Artist </th>
-      <th> Date </th>
-      <th> Venue </th>
-    </tr> -->
-    <tr> 
-    <% @gigs.each do |gig| %>
-      <p> <%= Artist.find(gig.artist_id).title %>,
-          <%= Venue.find(gig.venue_id).name %>, 
-          <%= nice_date(gig.start_date) %> 
-          @<%= nice_time(gig.start_date) %>
-          <%= link_to("Show", gig_path(gig)) %>
-          <%= link_to("Book!", new_gig_booking_path(gig)) %> </p>
+    <thead>
+      <tr>
+        <th>Artist</th>
+        <th>Venue</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Show</th>
+        <th>Book</th>
+      </tr>
+      </thead>
+      <tbody>
+    
+          <% @gigs.each do |gig| %>
+      <tr>
+          <td><%= Artist.find(gig.artist_id).title %> </td>
+          <td><%= Venue.find(gig.venue_id).name %></td> 
+          <td><%= nice_date(gig.start_date) %> </td>
+          <td><%= nice_time(gig.start_date) %> </td>
+          <td><%= link_to("Show", gig_path(gig)) %> </td> 
+          <td><%= link_to("Book!", new_gig_booking_path(gig)) %> </td>
     <% end %>
      
     </tr>
+    </tbody>
   </table> 
+  

@@ -9,14 +9,20 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+    <div class='container'>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+<header>
+
+<!-- <img src="DOR-logo.jpg" alt="DOR-logo" style="width:304px;height:228px;"> -->
+
+</header>
 
 
   <nav>
     <ul>
-      <div class='login'>
+  
+  <div class='login'>
       <% if current_user %>
         <%= current_user.email %>
         <%= link_to "log out", destroy_user_session_path, method: :delete %>
@@ -38,9 +44,11 @@
       <li> <%= link_to("New Venue", new_venue_path) %> </li>
       <% end %>
     </ul>
+    <!-- <audio src="/music/good_enough.mp3" controls> -->
   </nav>
-
+  
 <%= yield %>
 
+</div>
 </body>
 </html>

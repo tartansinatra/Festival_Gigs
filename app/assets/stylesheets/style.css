@@ -1,7 +1,32 @@
 body {
-    background-color: #00BFFF;
+    background-image: url("rock-crowd.jpg");
+    /*background-color: #c0c0c0;*/
+    background-color: #90EE90;
+    background-repeat: no-repeat;
 }
 
-table, th {
-   border: 1px solid black;
+container {
+  position: relative;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table { 
+  width: 50%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
 }
