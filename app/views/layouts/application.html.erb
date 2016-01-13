@@ -12,7 +12,8 @@
     
 <header>
 <div class='container'>
-<!-- <img src="DOR-logo.jpg" alt="DOR-logo" style="width:304px;height:228px;"> -->
+
+<%= image_tag("DOR-logo.jpg", class: "logo") %>
 
 </header>
 
@@ -49,7 +50,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  
+
 <%= yield %>
 
 </div>

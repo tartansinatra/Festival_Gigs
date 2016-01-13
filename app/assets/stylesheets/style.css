@@ -5,6 +5,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.logo {
+  width: 600px;
+  height: 250px;
+}
 .container {
   position: relative;
   width: 300px;
