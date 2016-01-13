@@ -7,6 +7,8 @@ class GigsController < ApplicationController
     @gigs = Gig.all
     @artists = Artist.all
     @venues = Venue.all
+
+    @gigs = Gig.order("start_date")
   end
 
   def new

@@ -23,6 +23,17 @@ class Gig < ActiveRecord::Base
       errors.add(:end_date, "can't end a gig after it starts")
     end
   end
-    
+
+  # Check if a New Gig being created overlaps an existing one.  
+  def gig_times_overlap?(other)
+     (start_date - other.end_date) * (other.start_date - end_date) >= 0
+  end
+
+  # Return a scope for all interval overlapping the given interval, including the given interval itself
+    # named_scope :overlapping, lambda { |interval| {
+    #   :conditions => ["id <> ? AND (TIMEDIFF(start_date, ?) * TIMEDIFF(?, end_date)) >= 0", gig.id, gig.end_date, gig.start_date]
+    # }}
+
+
 
 end

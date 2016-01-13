@@ -1,4 +1,11 @@
 <h1> Artists </h1>
+
+<%= form_tag(artists_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Artists" %>
+<%= submit_tag "Search" %>
+<% end %>
+<br>
+
 Click the Artist name for their Profile.
 
 <p> <% @artists.each do |artist| %>
