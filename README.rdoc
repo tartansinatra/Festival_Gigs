@@ -1,4 +1,4 @@
-== README
+== README: 'Doppelgangers of Rock' Tribute Band Festival Gig & Bookings Web App 
 
 Thanks for taking the time to review my 'Rock Tribute Bands' Festival Gigs & Bookings Website application.  
 You'll find it's homepage offers a list of Gigs already created, with the option for those with an Admin role, the right to create new Gigs, Artists and Venues, as well as edit and delete existing ones.
