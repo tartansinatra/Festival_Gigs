@@ -7,6 +7,11 @@ class Gig < ActiveRecord::Base
   validates :end_date, presence: :true
   validate :start_date_in_future
   validate :end_date_is_after_start_date 
+  validates :capacity, presence: :true
+  validates_numericality_of :capacity, :only_integer => true, 
+      :greater_than_or_equal_to => 20,
+      :less_than_or_equal_to => 999,
+      :message => "can only be whole numbers between 20 and 999."
 
 
   private
@@ -25,8 +30,9 @@ class Gig < ActiveRecord::Base
   end
 
   # Check if a New Gig being created overlaps an existing one.  
-  def gig_times_overlap?(other)
-     (start_date - other.end_date) * (other.start_date - end_date) >= 0
+  def self.gig_times_overlap?(other)
+
+     #(start_date - other.end_date) * (other.start_date - end_date) >= 0
   end
 
 
@@ -35,7 +41,5 @@ class Gig < ActiveRecord::Base
     # named_scope :overlapping, lambda { |interval| {
     #   :conditions => ["id <> ? AND (TIMEDIFF(start_date, ?) * TIMEDIFF(?, end_date)) >= 0", gig.id, gig.end_date, gig.start_date]
     # }}
-
-
 
 end

@@ -5,7 +5,7 @@ body {
     background-repeat: no-repeat;
 }
 
-container {
+.container {
   position: relative;
   width: 300px;
   margin-left: auto;

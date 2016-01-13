@@ -5,7 +5,13 @@
 <p> Date: <%= nice_date(@gig.start_date) %> </p>
 <p> Time: <%= nice_time(@gig.start_date) %> </p>
 
+<% if can? :manage, @all %>
 <%= link_to('Edit', edit_gig_path(@gig)) %>
 <%= link_to('Delete', gig_path(@gig), method: :delete, data: {confirm: 'Are you sure?'}) %>
+<% end %>
+
+
+
+
 <%= link_to('Book', new_gig_booking_path(@gig)) %>
 

@@ -16,8 +16,15 @@ class BookingsController < ApplicationController
   end
 
   def create
+    booking = Booking.new(booking_params)
+    gig = booking.gig
+    if booking.no_of_tickets + Booking.total_tickets_sold(gig.id) >= gig.capacity
+    flash[:alert] = "No can do!"
+    redirect_to root_path  
+    else
     current_user.bookings.create(booking_params)
     redirect_to bookings_path
+    end
   end
 
   def show
