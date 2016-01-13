@@ -30,6 +30,7 @@ class ArtistsController < ApplicationController
 
   def update
     @artist.update(artist_params)
+    flash[:alert] = "You have updated this Artist."
     redirect_to(artists_path)
   end
 

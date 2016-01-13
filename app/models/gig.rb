@@ -30,10 +30,11 @@ class Gig < ActiveRecord::Base
   end
 
   # Check if a New Gig being created overlaps an existing one.  
-  def self.gig_times_overlap?(other)
-
-     #(start_date - other.end_date) * (other.start_date - end_date) >= 0
-  end
+  # def self.gig_times_overlap?(other)
+  #   venue = Gig.find(gig_id).venue.id
+  # 
+  #    #(start_date - other.end_date) * (other.start_date - end_date) >= 0
+  # end
 
 
 

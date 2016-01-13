@@ -26,6 +26,7 @@ class VenuesController < ApplicationController
 
   def update
     @venue.update(venue_params)
+    flash[:alert] = "You have updated this Venue."
     redirect_to(venues_path)
   end
 

@@ -11,3 +11,7 @@
   <%= f.hidden_field :gig_id, value: @gig.id %>
   <%= f.submit 'Book this Gig' %>
 <% end %>
+
+<% if flash[:alert] %>
+    <div class="notice"><%= flash[:alert] %></div>
+  <% end %>

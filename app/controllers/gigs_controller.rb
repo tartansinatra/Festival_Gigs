@@ -28,6 +28,7 @@ class GigsController < ApplicationController
 
   def update
     @gig.update(gig_params)
+    flash[:alert] = "You have updated this Gig."
     redirect_to(gigs_path)
   end
 
