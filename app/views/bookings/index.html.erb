@@ -1,9 +1,9 @@
-My Booked Tickets
+<h2> My Booked Tickets </h2>
 
-  <% @bookings.each do |booking| %>
-  <p> <%= booking.gig.artist.title %>,
-      <%= booking.gig.venue.name %>, 
-      <%= nice_date(booking.gig.start_date) %>, 
-      @<%= nice_time(booking.gig.start_date) %>,
-      <%= booking.no_of_tickets %> tickets booked. </p>
-      <% end %>
+<% @bookings.each do |booking| %>
+<p> <%= booking.gig.artist.title %>,
+  <%= booking.gig.venue.name %>, 
+  <%= nice_date(booking.gig.start_date) %>, 
+  @<%= nice_time(booking.gig.start_date) %>,
+  <%= booking.no_of_tickets %> tickets booked. </p>
+  <% end %>

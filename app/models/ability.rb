@@ -6,7 +6,9 @@ class Ability
     if user.role? :admin
       can :manage, :all
     else
-      can :read, [Gig, Artist, Venue]
+      can :read, [Gig, Artist, Venue, Booking]
+      can :create, Booking
+        
     end
   end
 

@@ -1,9 +1,11 @@
 class BookingsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index]
+  before_action :load_booking, except:[:index, :new, :create]
+  load_and_authorize_resource
 
   def index
-    @bookings = Booking.all
+    @bookings = current_user.bookings
     @users = User.all
     @gigs = Gig.all
   end
@@ -19,7 +21,7 @@ class BookingsController < ApplicationController
   end
 
   def show
-    @bookings == current_user.bookings
+    @bookings = current_user.bookings
   end
     
   def edit
@@ -40,7 +42,7 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:user_id, :gig_id, :no_of_tickets)
   end
 
-  def load_venue
+  def load_booking
     @booking = Booking.find(params[:id]) 
   end
 

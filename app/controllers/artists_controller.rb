@@ -5,7 +5,6 @@ class ArtistsController < ApplicationController
   
 
   def index
-    @artists = Artist.all
     if params[:search]
       @artist = Artist.search(params[:search]).order("created_at DESC")
     else

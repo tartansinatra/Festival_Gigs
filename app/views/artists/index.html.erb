@@ -8,7 +8,7 @@
 
 Click the Artist name for their Profile.
 
-<p> <% @artists.each do |artist| %>
+<p> <% @artist.each do |artist| %>
 <p> <%= link_to(artist.title, artist_path(artist)) %>
 
   <% if can? :manage, @artist %>
