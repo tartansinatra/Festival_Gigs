@@ -29,6 +29,8 @@ class Gig < ActiveRecord::Base
      (start_date - other.end_date) * (other.start_date - end_date) >= 0
   end
 
+
+
   # Return a scope for all interval overlapping the given interval, including the given interval itself
     # named_scope :overlapping, lambda { |interval| {
     #   :conditions => ["id <> ? AND (TIMEDIFF(start_date, ?) * TIMEDIFF(?, end_date)) >= 0", gig.id, gig.end_date, gig.start_date]

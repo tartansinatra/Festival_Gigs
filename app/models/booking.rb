@@ -5,4 +5,11 @@ class Booking < ActiveRecord::Base
   validates :no_of_tickets, numericality: true
   validates :no_of_tickets, numericality: {only_integer: true}
   
+  # Check if a New Booking being created has sufficient capacity left.  
+  def gig_sold_out?(gig_id)
+
+  end
+
+
+  
 end
