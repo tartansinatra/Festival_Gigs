@@ -8,12 +8,14 @@
   <p> Venue: <%= @gig.venue.name %> </p>
   <p> Date: <%= nice_date(@gig.start_date) %> </p>
   <p> Time: <%= nice_time(@gig.start_date) %> </p>
+  <p> Tickets Left: <%= @gig.tickets_left %> </p>
 </div>
 
 <!-- THE EDIT/DELETE LINKS TO MANAGE THE GIG FOR ADMIN USE ONLY -->
   <% if can? :manage, @all %>
   <%= link_to('Edit', edit_gig_path(@gig)) %>
   <%= link_to('Delete', gig_path(@gig), method: :delete, data: {confirm: 'Are you sure?'}) %>
+
   <% end %>
 
 <!-- AND A LINK FOR ALL USERS TO BOOK THE GIG (ASSUMING LOGIN) -->

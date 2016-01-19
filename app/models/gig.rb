@@ -13,6 +13,12 @@ class Gig < ActiveRecord::Base
       :less_than_or_equal_to => 300,
       :message => "can only be whole numbers between 20 and 999."
 
+  
+  def tickets_left
+    # gig = Gig.find(gig_id)
+    tickets_left = self.capacity - Gig.total_tickets_sold(self.id)
+  end
+
 
   private
 
@@ -40,11 +46,7 @@ class Gig < ActiveRecord::Base
   end
 
 
-  def self.tickets_left(gig_id)
-    gig = Gig.find(gig_id)
-    tickets_left = gig.capacity - Gig.total_tickets_sold(gig.id)
 
-  end
 
 
   # Check if a New Gig being created overlaps an existing one.  
