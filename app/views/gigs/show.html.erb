@@ -14,7 +14,6 @@
   <% if can? :manage, @all %>
   <%= link_to('Edit', edit_gig_path(@gig)) %>
   <%= link_to('Delete', gig_path(@gig), method: :delete, data: {confirm: 'Are you sure?'}) %>
-  <%= Booking.total_tickets_sold(gig_id) %>
   <% end %>
 
 <!-- AND A LINK FOR ALL USERS TO BOOK THE GIG (ASSUMING LOGIN) -->

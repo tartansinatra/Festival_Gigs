@@ -29,6 +29,24 @@ class Gig < ActiveRecord::Base
     end
   end
 
+  def self.total_tickets_sold(gig_id)
+    gig = Gig.find(gig_id)
+
+    total_tickets_sold = gig.bookings.inject(0) do |sum,x| 
+      sum + x.no_of_tickets
+    end
+
+    total_tickets_sold
+  end
+
+
+  def self.tickets_left(gig_id)
+    gig = Gig.find(gig_id)
+    tickets_left = gig.capacity - Gig.total_tickets_sold(gig.id)
+
+  end
+
+
   # Check if a New Gig being created overlaps an existing one.  
   # def self.gig_times_overlap?(other)
   #   venue = Gig.find(gig_id).venue.id
