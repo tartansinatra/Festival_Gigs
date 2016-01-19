@@ -1,23 +1,69 @@
 body {
-    /*background-image: url("rock-crowd.jpg");*/
-    /*background-color: #c0c0c0;*/
-    background-color: #90EE90;
+    background-image: url("rock-crowd.jpg");
+    background-size: 100%;
+    /*Color behind the image*/
+    background-color: #c0c0c0;
     background-repeat: no-repeat;
 }
 
-.logo {
-  width: 600px;
-  height: 250px;
-}
-.container {
-  position: relative;
-  width: 300px;
-  margin-left: auto;
-  margin-right: auto;
+header {
+  align: center;
 }
 
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  height: 125px;
+}
+
+
+/* NAVIGATION BAR */
+
+nav {
+  width: 75px;
+  float: left;
+  font-family: 'Signika', sans-serif;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 120px;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111111;
+    color: white;
+}
+
+
+
+
+
+
+.container {  
+  position: relative;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lobster', cursive;
+}
+
+
+
 table { 
-  width: 50%; 
+  width: 100%; 
   border-collapse: collapse; 
 }
 /* Zebra striping */
@@ -32,5 +78,30 @@ th {
 td, th { 
   padding: 6px; 
   border: 1px solid #ccc; 
-  text-align: left; 
+  text-align: center; 
+}
+
+section {
+  font-family: 'Bangers', cursive;
+  /*font-family: sans-serif;*/
+  background-color: #F0F8FF;
+  font-size: larger;
+}
+
+.div1 img {
+    display: block;
+    max-width:460px;
+    max-height:190px;
+    width: auto;
+    height: auto;
+}
+
+.div2 {
+  display: block;
+  float: right;
+  font: larger;
+}
+
+label, input {
+  vertical-align: baseline;
 }

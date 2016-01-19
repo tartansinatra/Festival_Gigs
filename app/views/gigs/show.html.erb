@@ -1,17 +1,22 @@
 <h1> Gigs </h1>
 
-<p> <%= @gig.artist.title %> </p>
-<p> Venue: <%= @gig.venue.name %> </p>
-<p> Date: <%= nice_date(@gig.start_date) %> </p>
-<p> Time: <%= nice_time(@gig.start_date) %> </p>
+<div class="div1">
+  <img src='<%= @gig.artist.image %>' class="band_image" alt='Picture of <%= @gig.artist.title %>' >
+</div1>
+<div class="div2">
+  <p> <%= @gig.artist.title %> </p>
+  <p> Venue: <%= @gig.venue.name %> </p>
+  <p> Date: <%= nice_date(@gig.start_date) %> </p>
+  <p> Time: <%= nice_time(@gig.start_date) %> </p>
+</div>
 
-<% if can? :manage, @all %>
-<%= link_to('Edit', edit_gig_path(@gig)) %>
-<%= link_to('Delete', gig_path(@gig), method: :delete, data: {confirm: 'Are you sure?'}) %>
-<% end %>
+<!-- THE EDIT/DELETE LINKS TO MANAGE THE GIG FOR ADMIN USE ONLY -->
+  <% if can? :manage, @all %>
+  <%= link_to('Edit', edit_gig_path(@gig)) %>
+  <%= link_to('Delete', gig_path(@gig), method: :delete, data: {confirm: 'Are you sure?'}) %>
+  <%= Booking.total_tickets_sold(gig_id) %>
+  <% end %>
 
-
-
-
-<%= link_to('Book', new_gig_booking_path(@gig)) %>
+<!-- AND A LINK FOR ALL USERS TO BOOK THE GIG (ASSUMING LOGIN) -->
+  <%= link_to('Book', new_gig_booking_path(@gig)) %>
 

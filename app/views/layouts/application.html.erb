@@ -7,21 +7,18 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" type="text/css" href="normalize.css">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster|Bangers|Signika:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=' rel='stylesheet' type='text/css'>
 </head>
+
 <body>
-    
+
 <header>
-<div class='container'>
-
-<%= image_tag("DOR-logo.jpg", class: "logo") %>
-
-</header>
-
+<%= image_tag("DOR_logo3.png", class: "logo") %>
+</header> 
 
   <nav>
-    <ul>
-  
-  <div class='login'>
+    <div class='login'>
       <% if current_user %>
         <%= current_user.email %>
         <%= link_to "log out", destroy_user_session_path, method: :delete %>
@@ -30,29 +27,27 @@
         <%= link_to "Register", new_user_registration_path %>
       <% end %>
 
-      
-      <li> <%= link_to('Show Gigs', gigs_path) %> </li>
-      <li> <%= link_to('Show Artists', artists_path) %> </li>
-      <li> <%= link_to("Show Venues", venues_path) %> </li>
-      <br>
-      <li> <%= link_to("Show Booked Tickets", bookings_path) %> </li>
+    <ul>
+      <li><%= link_to('Show Gigs', gigs_path) %></li>
+      <li><%= link_to('Show Artists', artists_path) %></li>
+      <li><%= link_to("Show Venues", venues_path) %></li>
+      <li><%= link_to("My Bookings", bookings_path) %></li>
       <br>
       <% if can? :manage, @all %>
-      <li> <%= link_to("New Gig", new_gig_path) %> </li>
-      <li> <%= link_to("New Artist", new_artist_path) %> </li>
-      <li> <%= link_to("New Venue", new_venue_path) %> </li>
-      <% end %>
+      <li><%= link_to("New Gig", new_gig_path) %></li>
+      <li><%= link_to("New Artist", new_artist_path) %></li>
+      <li><%= link_to("New Venue", new_venue_path) %></li>
+       <% end %>
     </ul>
-    <!-- <audio src="/music/good_enough.mp3" controls> -->
+    </div>
   </nav>
-  
-  
+ 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  
+  <div class='container'>
+    <%= yield %>
+  </div>
 
-
-<%= yield %>
-
-</div>
 </body>
 </html>

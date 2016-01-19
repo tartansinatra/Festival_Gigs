@@ -1,10 +1,15 @@
-<h3> Artist Profile </h3>
-<h1> <%= @artist.title %></h1>
-<p> Description: <%= @artist.description %> </p>
-<p> Genre: TBC </p>
-<br>
-<p> <img src='<%= @artist.image %>' alt='Picture of <%= @artist.title %>' > </p>
-<p> <% if can? :manage, @artist %>
+<h1> Artist Profile </h1>
+<h2> <%= @artist.title %></h2>
+
+<div class="div1">
+  <img src='<%= @artist.image %>' class="band_image" alt='Picture of <%= @artist.title %>' >
+</div1>
+
+<section>
+  <p> <%= @artist.description %> </p>
+</section>
+
+ <% if can? :manage, @artist %>
  <%= link_to('Edit', edit_artist_path(@artist)) %>
  <%= link_to('Delete', artist_path(@artist), method: :delete, data: {confirm: 'Are you sure?'}) %>
 <% end %>

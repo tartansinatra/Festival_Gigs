@@ -21,6 +21,7 @@ class GigsController < ApplicationController
   end
 
   def show
+    @bookings = Booking.all
   end
 
   def edit

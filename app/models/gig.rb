@@ -10,7 +10,7 @@ class Gig < ActiveRecord::Base
   validates :capacity, presence: :true
   validates_numericality_of :capacity, :only_integer => true, 
       :greater_than_or_equal_to => 20,
-      :less_than_or_equal_to => 999,
+      :less_than_or_equal_to => 300,
       :message => "can only be whole numbers between 20 and 999."
 
 
@@ -32,11 +32,9 @@ class Gig < ActiveRecord::Base
   # Check if a New Gig being created overlaps an existing one.  
   # def self.gig_times_overlap?(other)
   #   venue = Gig.find(gig_id).venue.id
-  # 
-  #    #(start_date - other.end_date) * (other.start_date - end_date) >= 0
+  #   
+     # (start_date - other.end_date) * (other.start_date - end_date) >= 0
   # end
-
-
 
   # Return a scope for all interval overlapping the given interval, including the given interval itself
     # named_scope :overlapping, lambda { |interval| {

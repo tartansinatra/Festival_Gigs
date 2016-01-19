@@ -1,11 +1,13 @@
 <h1> List of Venues </h1>
 
-<%= @venue.name %>
-<p> <%= @venue.add_1 %> </p>
-<p> <%= @venue.add_2 %> </p>
-<p> <%= @venue.town %> </p>
-<p> <%= @venue.postcode %> </p>
-<p> <img src='<%= @venue.image %>' alt='Picture of <%= @venue.name %>' > </p>
+  <%= @venue.name %>
+  <p> <%= @venue.add_1 %> </p>
+  <p> <%= @venue.add_2 %> </p>
+  <p> <%= @venue.town %> </p>
+  <p> <%= @venue.postcode %> </p>
+<div class="div1">
+  <img src='<%= @venue.image %>' alt='Picture of <%= @venue.name %>' > </p>
+</div>
 
 <p> <% if can? :manage, @venue %>
  <%= link_to('Edit', edit_venue_path(@venue)) %>
