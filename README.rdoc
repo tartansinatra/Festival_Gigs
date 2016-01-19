@@ -1,23 +1,86 @@
-== README
+== README: 'Doppelgangers of Rock' Tribute Band Festival Gig & Bookings Web App 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Thanks for taking the time to review my 'Rock Tribute Bands' Festival Gigs & Bookings Website application.  
+You'll find it's homepage offers a list of Gigs already created, with the option for those with an Admin role, the right to create new Gigs, Artists and Venues, as well as edit and delete existing ones.
 
-Things you may want to cover:
+Here's some info you might need to get it setup:
 
-* Ruby version
+* Ruby version: App developed in Ruby on Rails v4.3.5
+
 
 * System dependencies
+To run the project effectively, you'll need to install and bundle the following Gem files: 
+
+gem 'devise' - for email/ password authentication
+gem 'cancancan' - for role based (Admin/ Guest) authentication for create/edit/delete functions.
+
+Plus ensure the following as a minimum;
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '4.2.5'
+
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.0'
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
+
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
+  # gem 'pry-byebug'
+  gem 'pry-rails'
+end
+
+group :development do
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+
+
+ 
+
 
 * Configuration
 
+HTML5 and CSS3 for markup in page views.
+
 * Database creation
+
+Database has numerous tables with corresponding Controllers for Active Record modelling, namely:
+
+Artists - artist_id, title, description, image fields.
+
+#Venues - venue_id, name, add_1, add_2, town, postcode, image fields.
+
+#Gigs - gig_id, artist_id, venue_id, capacity, start_date (datetime) and end_date (datetime) fields.
+
+#(through a Devise gem install) Users - user_id, email, password, etc.  Add a role:string after setup. 
+Bookings - user_id, gig_id, no_of_tickets fields.
+
+
 
 * Database initialization
 
 * How to run the test suite
 
+There is no test suite, sorry!
+
 * Services (job queues, cache servers, search engines, etc.)
+
+This is only a test-project, so has not been uploaded.  Therefore, no Search Engine metatags or deployment. For localhost use only.
+
 
 * Deployment instructions
 
